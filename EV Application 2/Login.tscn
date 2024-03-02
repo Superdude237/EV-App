@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://dt86wtuf7mcuj"]
+
+[ext_resource type="Texture2D" uid="uid://o5sdtfd35tmy" path="res://blue.png" id="1_q2elj"]
+[ext_resource type="Script" path="res://Login.cs" id="1_tvdg8"]
+[ext_resource type="Texture2D" uid="uid://bcro8qrdtyuev" path="res://cyan.jpg" id="2_mcw8r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dtf3t"]
+font_size = 46
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2jwb2"]
+texture = ExtResource("1_q2elj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nuc1l"]
+texture = ExtResource("2_mcw8r")
+modulate_color = Color(0.341176, 0.756863, 0.960784, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tvdg8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 360.0
+offset_bottom = 640.0
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 215.0
+offset_right = 300.0
+offset_bottom = 246.0
+placeholder_text = "Enter Your Email..."
+
+[node name="LineEdit2" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 271.0
+offset_right = 300.0
+offset_bottom = 302.0
+placeholder_text = "Enter Your Password..."
+
+[node name="LineEdit3" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 326.0
+offset_right = 340.0
+offset_bottom = 357.0
+placeholder_text = "Enter Your Vehicle Registration Number..."
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 49.0
+offset_right = 307.0
+offset_bottom = 115.0
+text = "Login Page"
+label_settings = SubResource("LabelSettings_dtf3t")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 409.0
+offset_right = 223.0
+offset_bottom = 440.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_2jwb2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nuc1l")
+text = "Login"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
